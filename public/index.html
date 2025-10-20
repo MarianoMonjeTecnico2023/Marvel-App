@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marvel Cards</title>
+<link rel="stylesheet" href="./styles.css" />
+<meta name="description" content="Busca personajes de Marvel y descubre su primera aparición." />
+</head>
+<body>
+<header class="nav">
+<div class="container nav__inner">
+<div class="brand">
+<div class="brand__logo" aria-hidden="true"></div>
+<strong>Marvel Cards</strong>
+</div>
+<form id="search-form" class="search" autocomplete="off">
+<input id="query" name="q" placeholder="Buscar personaje (ej: Spider)" aria-label="Buscar" />
+<button class="btn" type="submit">Buscar</button>
+</form>
+</div>
+</header>
+
+
+<main class="container">
+<section class="hero">
+<h1>Explorá el multiverso Marvel</h1>
+<p class="lead">Imágenes, lore y el <strong>primer cómic</strong> en el que apareció cada personaje.</p>
+</section>
+
+
+<section id="status" class="status" hidden></section>
+
+
+<section id="grid" class="grid" aria-live="polite"></section>
+</main>
+
+
+<footer class="footer container">
+<small>Datos de <a href="https://developer.marvel.com" target="_blank" rel="noreferrer noopener">Marvel Developer API</a>. © Marvel.</small>
+</footer>
+
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>

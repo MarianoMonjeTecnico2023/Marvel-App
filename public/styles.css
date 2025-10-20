@@ -1,0 +1,46 @@
+:root{
+--bg:#0b0c0f; --card:#12141a; --text:#e9eef5; --muted:#94a3b8; --border:rgba(148,163,184,.18);
+--accent:#e11d48; --accent2:#f59e0b; --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+@media (prefers-color-scheme: light){
+:root{ --bg:#f6f7fb; --card:#ffffff; --text:#0b0c0f; --muted:#475569; --border:rgba(2,6,23,.12); }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Inter,Roboto,Ubuntu,Arial,sans-serif; background:var(--bg); color:var(--text)}
+.container{width:min(1100px,92vw);margin:0 auto}
+
+
+.nav{position:sticky;top:0;backdrop-filter:blur(8px);border-bottom:1px solid var(--border);background:color-mix(in oklab,var(--bg) 86%,transparent);z-index:10}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand__logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}
+.search{display:flex;gap:10px}
+.search input{padding:10px 12px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--text);min-width:240px}
+.btn{padding:10px 16px;border-radius:999px;border:1px solid var(--border);background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:700}
+
+
+.hero{padding:32px 0 8px}
+.lead{color:var(--muted)}
+
+
+.status{margin:8px 0 16px;padding:12px;border:1px dashed var(--border);border-radius:12px;color:var(--muted)}
+
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;padding:22px 0 48px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.card__img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.card__body{padding:14px 14px 16px}
+.card__title{margin:0 0 6px;font-weight:800;font-size:1.1rem}
+.meta{font-size:.9rem;color:var(--muted)}
+.desc{margin:10px 0 0;font-size:.95rem}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.link{font-size:.9rem;opacity:.9}
+
+
+.skeleton{position:relative;overflow:hidden;background:color-mix(in oklab,var(--card) 85%,#fff 15%)}
+.skeleton::after{content:"";position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);animation:shimmer 1.25s infinite}
+@keyframes shimmer{100%{transform:translateX(100%)}}
+
+
+.footer{padding:20px 0 40px;color:var(--muted)}
